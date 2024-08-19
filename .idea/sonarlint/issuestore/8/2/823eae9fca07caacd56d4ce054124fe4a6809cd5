@@ -1,9 +1,0 @@
-
-¶
-java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(¯ê›ï8›ù¡Ì–2
-X
-java:S2696""6Make the enclosing method "static" or remove this set.(ñõîÙþÿÿÿÿ8¤ù¡Ì–2
-S
-java:S2696O"6Make the enclosing method "static" or remove this set.(Ùçñá8½ù¡Ì–2
-n
-java:S1128"QRemove this unused import 'dev.aleksmd.goldspawner.spawner.GoldenCompassSpawner'.(í…³º8çÙ®Í–2
