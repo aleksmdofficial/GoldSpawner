@@ -1,0 +1,9 @@
+crafting:
+  schem:
+    - "SSS"
+    - "SGS"
+    - "SSS"
+  S:
+    material: SPAWNER
+  G:
+    material: GOLD_BLOCK

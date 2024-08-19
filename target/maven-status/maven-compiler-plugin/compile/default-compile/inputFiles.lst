@@ -1,0 +1,15 @@
+/Users/aleksmd/Documents/GoldSpawner/src/main/java/dev/aleksmd/goldspawner/Main.java
+/Users/aleksmd/Documents/GoldSpawner/src/main/java/dev/aleksmd/goldspawner/commands/GoldAxeCMD.java
+/Users/aleksmd/Documents/GoldSpawner/src/main/java/dev/aleksmd/goldspawner/commands/GoldSpawnerCMD.java
+/Users/aleksmd/Documents/GoldSpawner/src/main/java/dev/aleksmd/goldspawner/commands/GoldenCompassCMD.java
+/Users/aleksmd/Documents/GoldSpawner/src/main/java/dev/aleksmd/goldspawner/items/GoldSpawner.java
+/Users/aleksmd/Documents/GoldSpawner/src/main/java/dev/aleksmd/goldspawner/items/GoldenCompass.java
+/Users/aleksmd/Documents/GoldSpawner/src/main/java/dev/aleksmd/goldspawner/listener/BukkitListener.java
+/Users/aleksmd/Documents/GoldSpawner/src/main/java/dev/aleksmd/goldspawner/listener/CompassListener.java
+/Users/aleksmd/Documents/GoldSpawner/src/main/java/dev/aleksmd/goldspawner/manager/ConfigManager.java
+/Users/aleksmd/Documents/GoldSpawner/src/main/java/dev/aleksmd/goldspawner/spawner/Crafting.java
+/Users/aleksmd/Documents/GoldSpawner/src/main/java/dev/aleksmd/goldspawner/spawner/GiveMoney.java
+/Users/aleksmd/Documents/GoldSpawner/src/main/java/dev/aleksmd/goldspawner/spawner/GoldenCompassSpawner.java
+/Users/aleksmd/Documents/GoldSpawner/src/main/java/dev/aleksmd/goldspawner/spawner/NotifySpawner.java
+/Users/aleksmd/Documents/GoldSpawner/src/main/java/dev/aleksmd/goldspawner/utils/HexUtils.java
+/Users/aleksmd/Documents/GoldSpawner/src/main/java/dev/aleksmd/goldspawner/utils/LogUtils.java

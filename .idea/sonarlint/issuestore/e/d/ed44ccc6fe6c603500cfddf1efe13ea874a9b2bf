@@ -1,0 +1,21 @@
+
+r
+java:S1192"WDefine a constant instead of duplicating this literal "messages.command.usage" 4 times.(©Õ©šúÿÿÿÿ
+b
+java:S1192]"GDefine a constant instead of duplicating this literal "reload" 3 times.(½ûÊ¨üÿÿÿÿ
+k
+java:S1192 "UDefine a constant instead of duplicating this literal "holygoldspawner.give" 5 times.(È÷º³
+m
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 41 to the 15 allowed.(¼ß…ýüÿÿÿÿ
+h
+java:S6204K"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ã¤£’
+h
+java:S6204y"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹
+h
+java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹
+i
+java:S6204†"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹
+i
+java:S6204Œ"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹
+á
+java:S6541"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 78 to 64, Complexity from 19 to 14, Nesting Level from 3 to 2, Number of Variables from 21 to 6.(¼ß…ýüÿÿÿÿ

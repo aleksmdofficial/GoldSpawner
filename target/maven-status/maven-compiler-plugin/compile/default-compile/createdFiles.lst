@@ -1,0 +1,16 @@
+dev/aleksmd/goldspawner/utils/LogUtils.class
+dev/aleksmd/goldspawner/commands/GoldAxeCMD.class
+dev/aleksmd/goldspawner/Main.class
+dev/aleksmd/goldspawner/spawner/GoldenCompassSpawner.class
+dev/aleksmd/goldspawner/commands/GoldSpawnerCMD.class
+dev/aleksmd/goldspawner/manager/ConfigManager.class
+dev/aleksmd/goldspawner/spawner/GiveMoney.class
+dev/aleksmd/goldspawner/listener/BukkitListener.class
+dev/aleksmd/goldspawner/items/GoldSpawner.class
+dev/aleksmd/goldspawner/utils/HexUtils.class
+dev/aleksmd/goldspawner/commands/GoldenCompassCMD.class
+dev/aleksmd/goldspawner/listener/CompassListener.class
+dev/aleksmd/goldspawner/spawner/NotifySpawner.class
+dev/aleksmd/goldspawner/items/GoldenCompass.class
+dev/aleksmd/goldspawner/spawner/Crafting.class
+dev/aleksmd/goldspawner/Main$1.class

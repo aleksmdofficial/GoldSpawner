@@ -1,0 +1,14 @@
+
+n	java:S135:"YReduce the total number of break and continue statements in this loop to use at most one.(—¾›Å
+O
+java:S1118":Add a private constructor to hide the implicit public one.(°ßˆ
+m
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(¾‰±µüÿÿÿÿ
+=
+java:S1905"'Remove this unnecessary cast to "List".(“Î„Þ
+h
+java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(“Î„Þ
+D
+java:S1905")Remove this unnecessary cast to "Plugin".(Ò‘Ãßúÿÿÿÿ
+?
+java:S1905K")Remove this unnecessary cast to "Recipe".(¹ô©‡

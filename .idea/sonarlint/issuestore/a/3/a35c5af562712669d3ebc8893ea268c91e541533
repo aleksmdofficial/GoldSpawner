@@ -1,0 +1,14 @@
+
+o
+java:S1192W"MDefine a constant instead of duplicating this literal "gold_spawner" 7 times.(Ïæ€Œıÿÿÿÿ8ÄìƒÍ–2
+
+java:S2629„"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(±­«¶ÿÿÿÿÿ8ÈìƒÍ–2
+
+java:S2629®"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(›„¥ûÿÿÿÿ8ÉìƒÍ–2
+o
+java:S62046"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(œçÖß8ÂíƒÍ–2
+p
+java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8€‹¢Î–2
+M
+java:S1128
+"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8‹¢Î–2

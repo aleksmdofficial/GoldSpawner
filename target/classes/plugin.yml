@@ -1,0 +1,23 @@
+name: GoldSpawner
+version: '1.0.8'
+main: dev.aleksmd.goldspawner.Main
+api-version: '1.20'
+load: POSTWORLD
+
+depend:
+  - Vault
+
+commands:
+  goldspawner:
+    aliases: [ goldspawner ]
+
+  goldaxepick:
+    aliases: [ pickaxe ]
+  goldencompass:
+    description: Выдает игроку Золотой Компас.
+    usage: /goldencompass
+    permission: goldencompass.use
+permissions:
+  goldencompass.use:
+    description: Разрешение на использование команды /goldencompass
+    default: true
