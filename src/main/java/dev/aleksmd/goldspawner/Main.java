@@ -11,6 +11,7 @@ import dev.aleksmd.goldspawner.manager.ConfigManager;
 import dev.aleksmd.goldspawner.spawner.Crafting;  // Импортируем класс Crafting
 import dev.aleksmd.goldspawner.spawner.GiveMoney;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 import net.milkbowl.vault.economy.Economy;
@@ -23,7 +24,6 @@ import org.bukkit.scheduler.BukkitRunnable;
 public final class Main extends JavaPlugin {
     private static Main instance;
     private static Economy econ;
-    private static List<Location> spawnerLocations;  // Список для хранения координат спавнеров
 
 
     @Override
@@ -44,13 +44,16 @@ public final class Main extends JavaPlugin {
         // Регистрация команды и обработчиков событий
         GoldSpawnerCMD commandExecutor = new GoldSpawnerCMD();
         getCommand("goldspawner").setExecutor(commandExecutor);
+        getCommand("goldspawner").setTabCompleter(commandExecutor);
         getServer().getPluginManager().registerEvents(new GoldSpawner(), this);
         this.getServer().getPluginManager().registerEvents(new BukkitListener(), this);
         // Регистрация команды
         this.getCommand("goldencompass").setExecutor(new GoldenCompassCMD());
         // Регистрация слушателя событий
         getServer().getPluginManager().registerEvents(new CompassListener(), this);
-        getCommand("goldaxepick").setExecutor(new GoldAxeCMD(this));
+        GoldAxeCMD goldAxeCMD = new GoldAxeCMD(this);
+        getCommand("goldaxepick").setExecutor(goldAxeCMD);
+        getCommand("goldaxepick").setTabCompleter(goldAxeCMD);
         this.saveDefaultConfig();
 
         // Регистрация рецепта крафта
@@ -89,7 +92,7 @@ public final class Main extends JavaPlugin {
         }.runTaskTimer(this, interval, interval);
     }
     public static List<Location> getSpawnerLocations() {
-        return spawnerLocations;
+        return new ArrayList<>(GoldSpawner.getSpawnerLocations().keySet());
     }
     private void stopGlobalTask() {
         getServer().getScheduler().cancelTasks(this);

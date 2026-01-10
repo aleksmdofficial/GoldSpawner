@@ -24,6 +24,12 @@ messages:
       - " &fВыше &6%max% &fвысоты"
       - ""
 
+  compass:
+    received: "&aВы получили Золотой Компас!"
+    no-spawner: "&cЗолотой спавнер не найден!"
+    coordinates: "&eКоординаты золотого спавнера: &f%coordinates%"
+    only-player: "&cЭту команду может выполнить только игрок."
+
   command:
     usage:
       - ""

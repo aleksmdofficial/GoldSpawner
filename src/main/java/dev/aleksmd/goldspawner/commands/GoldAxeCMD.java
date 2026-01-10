@@ -1,9 +1,11 @@
 package dev.aleksmd.goldspawner.commands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -12,7 +14,12 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.inventory.ItemFlag;
 
-public class GoldAxeCMD implements CommandExecutor {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class GoldAxeCMD implements CommandExecutor, TabCompleter {
 
     private final JavaPlugin plugin;
 
@@ -57,5 +64,33 @@ public class GoldAxeCMD implements CommandExecutor {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+        if (!sender.hasPermission("goldaxepick.admin")) {
+            return new ArrayList<>();
+        }
+
+        if (args.length == 1) {
+            return Arrays.asList("give").stream()
+                    .filter(cmd -> cmd.startsWith(args[0].toLowerCase()))
+                    .collect(Collectors.toList());
+        }
+
+        if (args.length == 2 && args[0].equalsIgnoreCase("give")) {
+            return Bukkit.getOnlinePlayers().stream()
+                    .map(Player::getName)
+                    .filter(name -> name.toLowerCase().startsWith(args[1].toLowerCase()))
+                    .collect(Collectors.toList());
+        }
+
+        if (args.length == 3 && args[0].equalsIgnoreCase("give")) {
+            return Arrays.asList("pickaxe").stream()
+                    .filter(type -> type.startsWith(args[2].toLowerCase()))
+                    .collect(Collectors.toList());
+        }
+
+        return new ArrayList<>();
     }
 }

@@ -1,6 +1,7 @@
 package dev.aleksmd.goldspawner.listener;
 
 import dev.aleksmd.goldspawner.Main;
+import dev.aleksmd.goldspawner.items.GoldSpawner;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.event.EventHandler;
@@ -12,6 +13,15 @@ import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 
 public class BukkitListener implements Listener {
+
+    private static NamespacedKey goldaxeKey;
+    
+    private NamespacedKey getGoldaxeKey() {
+        if (goldaxeKey == null) {
+            goldaxeKey = new NamespacedKey(Main.getInstance(), "goldaxe");
+        }
+        return goldaxeKey;
+    }
 
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event) {
@@ -26,8 +36,9 @@ public class BukkitListener implements Listener {
                 ItemMeta itemMeta = itemStack.getItemMeta();
                 if (itemMeta != null) {
                     PersistentDataContainer container = itemMeta.getPersistentDataContainer();
-                    if (container.has(new NamespacedKey(Main.getInstance(), "jake"), PersistentDataType.STRING)) {
-                        String value = container.get(new NamespacedKey(Main.getInstance(), "jake"), PersistentDataType.STRING);
+                    NamespacedKey key = getGoldaxeKey();
+                    if (container.has(key, PersistentDataType.STRING)) {
+                        String value = container.get(key, PersistentDataType.STRING);
                         if (value != null && value.equals("1")) {
 
                             // Отменяем стандартное разрушение блока
@@ -53,7 +64,7 @@ public class BukkitListener implements Listener {
                             }
 
                             // Удаление спавнера из памяти
-                            Main.getInstance().getSpawnerLocations().remove(event.getBlock().getLocation());
+                            GoldSpawner.getSpawnerLocations().remove(event.getBlock().getLocation());
                         }
                     }
                 }

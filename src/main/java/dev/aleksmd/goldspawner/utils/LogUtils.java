@@ -1,11 +1,13 @@
 package dev.aleksmd.goldspawner.utils;
 
+import dev.aleksmd.goldspawner.Main;
+
 public class LogUtils {
     public static void dev(String text) {
-        System.out.println(HexUtils.translate("&8[&#FB7A08Holy&fGoldSpawner&8] " + text));
+        Main.getInstance().getLogger().info(HexUtils.translate(text));
     }
 
     public static void warning(String text) {
-        System.out.println(HexUtils.translate("&8[&#FF5900Внимание&8] " + text));
+        Main.getInstance().getLogger().warning(HexUtils.translate(text));
     }
 }
