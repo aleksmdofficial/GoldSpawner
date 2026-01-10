@@ -1,6 +1,7 @@
 package dev.aleksmd.goldspawner.listener;
 
 import dev.aleksmd.goldspawner.Main;
+import dev.aleksmd.goldspawner.items.GoldSpawner;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.event.EventHandler;
@@ -26,8 +27,8 @@ public class BukkitListener implements Listener {
                 ItemMeta itemMeta = itemStack.getItemMeta();
                 if (itemMeta != null) {
                     PersistentDataContainer container = itemMeta.getPersistentDataContainer();
-                    if (container.has(new NamespacedKey(Main.getInstance(), "jake"), PersistentDataType.STRING)) {
-                        String value = container.get(new NamespacedKey(Main.getInstance(), "jake"), PersistentDataType.STRING);
+                    if (container.has(new NamespacedKey(Main.getInstance(), "goldaxe"), PersistentDataType.STRING)) {
+                        String value = container.get(new NamespacedKey(Main.getInstance(), "goldaxe"), PersistentDataType.STRING);
                         if (value != null && value.equals("1")) {
 
                             // Отменяем стандартное разрушение блока
@@ -53,7 +54,7 @@ public class BukkitListener implements Listener {
                             }
 
                             // Удаление спавнера из памяти
-                            Main.getInstance().getSpawnerLocations().remove(event.getBlock().getLocation());
+                            GoldSpawner.getSpawnerLocations().remove(event.getBlock().getLocation());
                         }
                     }
                 }

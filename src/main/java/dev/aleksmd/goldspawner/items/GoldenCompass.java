@@ -1,6 +1,8 @@
 package dev.aleksmd.goldspawner.items;
 
 import dev.aleksmd.goldspawner.Main;
+import dev.aleksmd.goldspawner.manager.ConfigManager;
+import dev.aleksmd.goldspawner.utils.HexUtils;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
@@ -8,14 +10,14 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
+
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Класс GoldenCompass отвечает за создание и управление новым компасом.
  */
 public class GoldenCompass {
-
-    private static final String COMPASS_NAME = "Золотой Компас";
 
     /**
      * Создает новый уникальный компас.
@@ -27,10 +29,22 @@ public class GoldenCompass {
         ItemMeta meta = compass.getItemMeta();
 
         if (meta != null) {
-            meta.setDisplayName(COMPASS_NAME);
-            meta.addEnchant(Enchantment.LUCK, 1, true);  // Пример: зачарование на удачу
-            meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-            meta.setLore(List.of("Этот компас укажет путь к", "золотому спавнеру."));
+            // Получаем название из конфигурации
+            String name = ConfigManager.getItemsConfig().getString("compass.name", "&6Золотой Компас");
+            meta.setDisplayName(HexUtils.translate(name));
+            
+            // Получаем описание из конфигурации
+            List<String> lore = ConfigManager.getItemsConfig().getStringList("compass.lore").stream()
+                    .map(HexUtils::translate)
+                    .collect(Collectors.toList());
+            meta.setLore(lore);
+            
+            // Проверяем, нужно ли свечение
+            boolean glow = ConfigManager.getItemsConfig().getBoolean("compass.glow", true);
+            if (glow) {
+                meta.addEnchant(Enchantment.LUCK, 1, true);
+                meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+            }
 
             // Установка уникального идентификатора компаса
             NamespacedKey key = new NamespacedKey(Main.getInstance(), "golden_compass");

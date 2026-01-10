@@ -2,6 +2,8 @@ package dev.aleksmd.goldspawner.spawner;
 
 import dev.aleksmd.goldspawner.Main;
 import dev.aleksmd.goldspawner.items.GoldSpawner;
+import dev.aleksmd.goldspawner.manager.ConfigManager;
+import dev.aleksmd.goldspawner.utils.HexUtils;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
@@ -24,7 +26,8 @@ public class GoldenCompassSpawner {
 
         // Проверка, есть ли спавнеры в памяти
         if (spawnerLocations.isEmpty()) {
-            player.sendMessage("Золотой спавнер не найден!");
+            String noSpawnerMsg = ConfigManager.getMessagesConfig().getString("messages.compass.no-spawner", "&cЗолотой спавнер не найден!");
+            player.sendMessage(HexUtils.translate(noSpawnerMsg));
             return;
         }
 
@@ -39,6 +42,8 @@ public class GoldenCompassSpawner {
                 spawnerLocation.getBlockX(),
                 spawnerLocation.getBlockY(),
                 spawnerLocation.getBlockZ());
-        player.sendMessage("Координаты золотого спавнера: " + coordinates);
+        
+        String coordsMsg = ConfigManager.getMessagesConfig().getString("messages.compass.coordinates", "&eКоординаты золотого спавнера: &f%coordinates%");
+        player.sendMessage(HexUtils.translate(coordsMsg.replace("%coordinates%", coordinates)));
     }
 }
