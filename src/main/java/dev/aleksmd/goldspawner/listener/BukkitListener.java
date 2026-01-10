@@ -14,6 +14,15 @@ import org.bukkit.persistence.PersistentDataType;
 
 public class BukkitListener implements Listener {
 
+    private static NamespacedKey goldaxeKey;
+    
+    private NamespacedKey getGoldaxeKey() {
+        if (goldaxeKey == null) {
+            goldaxeKey = new NamespacedKey(Main.getInstance(), "goldaxe");
+        }
+        return goldaxeKey;
+    }
+
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event) {
         // Проверка, что игрок разрушает спавнер
@@ -27,8 +36,9 @@ public class BukkitListener implements Listener {
                 ItemMeta itemMeta = itemStack.getItemMeta();
                 if (itemMeta != null) {
                     PersistentDataContainer container = itemMeta.getPersistentDataContainer();
-                    if (container.has(new NamespacedKey(Main.getInstance(), "goldaxe"), PersistentDataType.STRING)) {
-                        String value = container.get(new NamespacedKey(Main.getInstance(), "goldaxe"), PersistentDataType.STRING);
+                    NamespacedKey key = getGoldaxeKey();
+                    if (container.has(key, PersistentDataType.STRING)) {
+                        String value = container.get(key, PersistentDataType.STRING);
                         if (value != null && value.equals("1")) {
 
                             // Отменяем стандартное разрушение блока
